@@ -1,6 +1,6 @@
 import { Fragment, useEffect } from "react";
 import AddUser from "./components/Users/AddUser";
-import UserList from "./components/Users/UsersList";
+import UsersList from "./components/Users/UsersList";
 import { useSelector, useDispatch } from "react-redux";
 import ErrorModal from "./components/UI/ErrorModal";
 import { uiActions } from "./store/ui-slice";
@@ -60,7 +60,14 @@ function App() {
         />
       )}
       <AddUser></AddUser>
-      {users.length > 0 && <UserList></UserList>}
+      {users.length > 0 ? (
+        <UsersList></UsersList>
+      ) : (
+        <div className="message-container">
+          <p className="empty-message">Start by adding new user</p>
+          <ion-icon name="happy-outline"></ion-icon>
+        </div>
+      )}
     </Fragment>
   );
 }

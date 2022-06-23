@@ -24,3 +24,23 @@ body {
 .invalid input:focus {
   border-color: #ff8800;
 }
+.message-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+.empty-message {
+  display: inline-block;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+}
+[name="happy-outline"] {
+  color: #fff;
+  margin-left: 12px;
+  width: 32px;
+  height: 32px;
+}
