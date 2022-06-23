@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/password-manager-app/static/css/main.2f9f436f.css",
+    "main.js": "/password-manager-app/static/js/main.bdfdfaf0.js",
+    "index.html": "/password-manager-app/index.html",
+    "main.2f9f436f.css.map": "/password-manager-app/static/css/main.2f9f436f.css.map",
+    "main.bdfdfaf0.js.map": "/password-manager-app/static/js/main.bdfdfaf0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2f9f436f.css",
+    "static/js/main.bdfdfaf0.js"
+  ]
+}
