@@ -15,8 +15,6 @@ import { useDispatch } from "react-redux";
 
 const AddUser = function (props) {
   const dispatch = useDispatch();
-  const nameInput = useRef();
-  const passwordInput = useRef();
 
   // name
   const [enteredName, setEnteredName] = useState("");
@@ -24,19 +22,19 @@ const AddUser = function (props) {
   const enteredNameIsValid = enteredName.trim() !== "";
   const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
 
-  // password
-  const [enteredPassword, setEnteredPassword] = useState("");
-  const [enteredPasswordTouched, setEnteredPasswordTouched] = useState(false);
-  const enteredPasswordIsValid = enteredPassword.trim().length > 6;
-  const passwordInputIsInvalid =
-    !enteredPasswordIsValid && enteredPasswordTouched;
-
   const nameInputChangeHandler = (event) => {
     setEnteredName(event.target.value);
   };
   const nameInputBlurHandler = (event) => {
     setEnteredNameTouched(true);
   };
+
+  // password
+  const [enteredPassword, setEnteredPassword] = useState("");
+  const [enteredPasswordTouched, setEnteredPasswordTouched] = useState(false);
+  const enteredPasswordIsValid = enteredPassword.trim().length > 6;
+  const passwordInputIsInvalid =
+    !enteredPasswordIsValid && enteredPasswordTouched;
 
   const passwordInputChangeHandler = (event) => {
     setEnteredPassword(event.target.value);
@@ -46,8 +44,32 @@ const AddUser = function (props) {
     setEnteredPasswordTouched(true);
   };
 
+  // title
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredTitleTouched, setEnteredTitleTouched] = useState(false);
+  const enteredTitleIsValid = enteredTitle.trim() !== "";
+  const titleInputIsInvalid = !enteredTitleIsValid && enteredTitleTouched;
+
+  const titleInputChangeHandler = (event) => {
+    setEnteredTitle(event.target.value);
+  };
+
+  const titleInputBlurHandler = () => {
+    setEnteredTitleTouched(true);
+  };
+
   const fromSubmitHandler = (event) => {
     event.preventDefault();
+
+    if (!enteredTitleIsValid) {
+      dispatch(
+        uiActions.showError({
+          title: "INVALID TITLE",
+          message: "Title can not be empty!",
+        })
+      );
+      return;
+    }
 
     if (!enteredNameIsValid) {
       dispatch(
@@ -78,6 +100,8 @@ const AddUser = function (props) {
       return;
     }
 
+    setEnteredTitle("");
+    setEnteredTitleTouched(false);
     setEnteredName("");
     setEnteredNameTouched(false);
     setEnteredPassword("");
@@ -87,14 +111,23 @@ const AddUser = function (props) {
       usersActions.addUser({
         name: enteredName,
         password: enteredPassword,
+        title: enteredTitle,
         id: Math.random().toString(),
       })
     );
   };
 
-  const nameInputClasses = nameInputIsInvalid ? "invalid" : "";
+  const nameInputClasses = nameInputIsInvalid
+    ? "input-control invalid"
+    : "input-control";
 
-  const passwordInputClasses = passwordInputIsInvalid ? "invalid" : "";
+  const passwordInputClasses = passwordInputIsInvalid
+    ? "input-control invalid"
+    : "input-control";
+
+  const titleInputClasses = titleInputIsInvalid
+    ? " input-control invalid"
+    : "input-control";
 
   return (
     <Fragment>
@@ -106,10 +139,19 @@ const AddUser = function (props) {
             <span className={classes["right-dot"]}></span>
           </h1>
 
+          <div className={titleInputClasses}>
+            <input
+              placeholder="Title"
+              id="title"
+              type="text"
+              onChange={titleInputChangeHandler}
+              onBlur={titleInputBlurHandler}
+              value={enteredTitle}
+            ></input>
+          </div>
           <div className={nameInputClasses}>
             <input
-              placeholder="Name"
-              ref={nameInput}
+              placeholder="Username"
               id="username"
               type="text"
               onChange={nameInputChangeHandler}
@@ -120,7 +162,6 @@ const AddUser = function (props) {
           <div className={passwordInputClasses}>
             <input
               placeholder="Password"
-              ref={passwordInput}
               id="password"
               type="text"
               onChange={passwordInputChangeHandler}

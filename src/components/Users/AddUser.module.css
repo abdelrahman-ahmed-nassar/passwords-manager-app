@@ -30,7 +30,7 @@ button.button {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 28px;
+  margin-bottom: 38px;
 }
 
 .right-dot,
@@ -54,13 +54,7 @@ input {
   border: none;
   border-bottom: 1px solid #15aabf;
   padding: 0.15rem;
-}
-.input input:nth-child(1) {
-  margin-bottom: 30px;
-}
-
-.input input:nth-child(2) {
-  margin-bottom: 10px;
+  margin-bottom: 18px;
 }
 
 input:focus {

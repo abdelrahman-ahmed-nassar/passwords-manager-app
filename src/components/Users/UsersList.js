@@ -17,16 +17,20 @@ const UserList = (props) => {
 
   return (
     <Card className={classes.users}>
-      <ul>
+      <ul className={classes["users-list"]}>
         {users.map((user) => {
           return (
             <li key={user.id}>
-              <p>
-                username: {user.name} <br /> password: {user.password}
-              </p>
-              <button id={user.id} onClick={deleteItemHandler}>
-                Delete
-              </button>
+              <div className={classes["text-container"]}>
+                <p className={classes.title}>{user.title}</p>
+                <p className={classes.name}>{user.name}</p>
+                <p className={classes.password}>{user.password}</p>
+              </div>
+              <div className={classes["btn-container"]}>
+                <button id={user.id} onClick={deleteItemHandler}>
+                  Delete
+                </button>
+              </div>
             </li>
           );
         })}
