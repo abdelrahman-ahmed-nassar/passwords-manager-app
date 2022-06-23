@@ -1,0 +1,30 @@
+.users {
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 40rem;
+}
+
+.users ul {
+  list-style: none;
+  padding: 1rem;
+}
+
+.users li {
+  border: 1px solid #ccc;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  display: flex;
+}
+
+.users li p {
+  flex: 1;
+}
+
+.users li button {
+  align-self: center;
+  border: 1px solid rgba(17, 17, 17, 0.3);
+  background: #f03e3e;
+  color: white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
