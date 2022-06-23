@@ -5,26 +5,65 @@
   max-width: 40rem;
 }
 
-.button {
+button.button {
   margin-top: 20px;
+  width: 100%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  background-color: transparent;
+  background-image: linear-gradient(to left, #0064e6, #00e6ac);
+  border: none;
 }
 
-.input label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+.heading-text {
+  margin: 0 auto;
 }
 
-.input input {
+.main-heading {
+  font-size: 28px;
+  color: #1971c2;
+  text-align: center;
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.right-dot,
+.left-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  color: #000;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-image: linear-gradient(to bottom right, #0064e6, #00e6ac);
+}
+
+input {
   font: inherit;
   display: block;
   width: 100%;
-  border: 1px solid #ccc;
+  border: none;
+  border-bottom: 1px solid #15aabf;
   padding: 0.15rem;
-  margin-bottom: 0.5rem;
+}
+.input input:nth-child(1) {
+  margin-bottom: 30px;
 }
 
-.input input:focus {
+.input input:nth-child(2) {
+  margin-bottom: 10px;
+}
+
+input:focus {
   outline: none;
-  border-color: #4f005f;
+  border-bottom: 1px solid #0064e6;
 }

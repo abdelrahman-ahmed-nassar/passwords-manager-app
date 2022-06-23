@@ -22,9 +22,14 @@
 
 .users li button {
   align-self: center;
-  border: 1px solid rgba(17, 17, 17, 0.3);
-  background: #f03e3e;
+  border-radius: 4px;
+  border: none;
+  background: #e03131;
   color: white;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
 }

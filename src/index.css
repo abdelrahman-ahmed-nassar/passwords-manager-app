@@ -1,24 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
-
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
   margin: 0;
-  background-color: #1f1f1f;
+  background-image: linear-gradient(to bottom right, #0064e6, #00e6ac);
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  color: #555;
+  font-family: "Roboto", sans-serif;
 }
+/* #00e6ac  #3ce7bd #0064e6  #3c86e7*/
 
 .invalid input {
-  border: 1px solid #b40e0e;
-  background-color: #fddddd;
+  border-bottom: 1px solid #b40e0e;
+  /* background-color: #fddddd; */
 }
 
 .invalid input:focus {
   border-color: #ff8800;
-  background-color: #fbe8d2;
 }

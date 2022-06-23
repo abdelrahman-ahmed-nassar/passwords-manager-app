@@ -19,7 +19,13 @@ const ModalOverlay = (props) => {
         <p>{props.message}</p>
       </div>
       <footer className={classes.actions}>
-        <Button onClick={props.onConfirm}>Okay</Button>
+        <Button onClick={props.onCancel} className={classes["cancel-btn"]}>
+          Cancel
+        </Button>
+
+        <Button onClick={props.onConfirm} className={classes["confirm-btn"]}>
+          Confirm
+        </Button>
       </footer>
     </Card>
   );
@@ -37,6 +43,7 @@ const ConfirmModal = (props) => {
           title={props.title}
           message={props.message}
           onConfirm={props.onConfirm}
+          onCancel={props.onCancel}
         />,
         document.getElementById("overlay-root")
       )}

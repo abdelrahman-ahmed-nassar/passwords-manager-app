@@ -100,9 +100,15 @@ const AddUser = function (props) {
     <Fragment>
       <Card className={classes.input}>
         <form onSubmit={fromSubmitHandler}>
+          <h1 className={classes["main-heading"]}>
+            <span className={classes["left-dot"]}></span>{" "}
+            <span className={classes["heading-text"]}>Passwords Manager</span>
+            <span className={classes["right-dot"]}></span>
+          </h1>
+
           <div className={nameInputClasses}>
-            <label htmlFor="username">Username</label>
             <input
+              placeholder="Name"
               ref={nameInput}
               id="username"
               type="text"
@@ -112,8 +118,8 @@ const AddUser = function (props) {
             ></input>
           </div>
           <div className={passwordInputClasses}>
-            <label htmlFor="password">Password</label>
             <input
+              placeholder="Password"
               ref={passwordInput}
               id="password"
               type="text"
